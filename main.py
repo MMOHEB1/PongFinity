@@ -11,4 +11,6 @@ paddle.color("white")
 paddle.shapesize(stretch_wid=4, stretch_len=0.5, outline=None)
 paddle.penup()
 
-print("bye world")
+print("Hello world")
+print("Hello world")
+print("Hello world")
