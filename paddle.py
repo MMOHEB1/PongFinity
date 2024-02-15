@@ -1,7 +1,5 @@
 from turtle import Turtle
-
-PADDLE_POSITION = [350, -350]
-MOVEMENT_SPEED = 20
+from utils import *
 
 
 class Paddle(Turtle):
