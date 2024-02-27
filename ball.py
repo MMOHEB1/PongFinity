@@ -1,4 +1,6 @@
 from turtle import Turtle
+from utils import BALL_SPEED
+
 
 class Ball(Turtle):
     def __init__(self):
@@ -7,8 +9,9 @@ class Ball(Turtle):
         self.color("white")
         self.shapesize()
         self.penup()
-        self.setheading(30)
 
     def move_ball(self):
         self.speed("slowest")
-        self.forward(10)
+        new_x = self.xcor() + BALL_SPEED
+        new_y = self.ycor() + BALL_SPEED
+        self.goto(new_x, new_y)
