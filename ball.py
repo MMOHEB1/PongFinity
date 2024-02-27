@@ -7,7 +7,8 @@ class Ball(Turtle):
         self.color("white")
         self.shapesize()
         self.penup()
-        self.setheading(45)
+        self.setheading(30)
 
     def move_ball(self):
-        self.goto(x=100, y=100)
+        self.speed("slowest")
+        self.forward(10)
