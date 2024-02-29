@@ -22,18 +22,27 @@ screen.onkey(r_paddle.go_down, "Down")
 screen.onkey(l_paddle.go_up, "w")
 screen.onkey(l_paddle.go_down, "s")
 
-game_is_on = True
-while game_is_on:
-    ball.move_ball()
-    screen.update()
-    # detecting collision with the wall:
-    if ball.ycor() >= 280 or ball.ycor() <= -280:
-        ball.bounce_y()
 
-#     detecting collision with the paddles:
-    if ball.distance(r_paddle) < 50 and ball.xcor() > 330 or ball.distance(l_paddle) < 50 and ball.xcor() < -330:
-        print("made contact")
-        ball.bounce_x()
+def game():
+    game_is_on = True
+    while game_is_on:
+        ball.move_ball()
+        screen.update()
+        # detecting collision with the wall:
+        if ball.ycor() >= 280 or ball.ycor() <= -280:
+            ball.bounce_y()
+
+        #     detecting collision with the paddles:
+        if ball.distance(r_paddle) < 50 and ball.xcor() > 330 or ball.distance(l_paddle) < 50 and ball.xcor() < -330:
+            print("made contact")
+            ball.bounce_x()
+
+        if ball.xcor() > 380 or ball.xcor() < -390:
+            game_is_on = False
+    ball.home()
+    ball.opposite_move()
+
+    screen.exitonclick()
 
 
-screen.exitonclick()
+game()
