@@ -37,10 +37,13 @@ def game():
             print("made contact")
             ball.bounce_x()
 
-        if ball.xcor() > 380 or ball.xcor() < -390:
-            game_is_on = False
-    ball.home()
-    ball.opposite_move()
+        # ball missed the R_paddle:
+        if ball.xcor() > 380:
+            ball.reset_position()
+
+        # ball missed the L_paddle:
+        if ball.xcor() > 380:
+            ball.reset_position()
 
     screen.exitonclick()
 
